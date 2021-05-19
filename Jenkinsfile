@@ -12,7 +12,7 @@ pipeline {
                     sh "npm install"
                     sh "npm run build"
                     sh "npm run lint"
-                    sh "npm run tests"
+                    sh "npm run test"
                 }
             }
         }
