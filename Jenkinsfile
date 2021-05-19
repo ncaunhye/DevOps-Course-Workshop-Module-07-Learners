@@ -14,8 +14,6 @@ pipeline {
                     sh "npm run lint"
                     sh "npm run tests"
                 }
-
-}
             }
         }
         stage('Testing backend') {
