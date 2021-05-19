@@ -2,9 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Frontend') {
+            agent {docker{image "node:14-alpine"}}
             steps {
-                echo 'Building..'
+                dir("DotnetTemplate.Web/") {
+                    sh "npm install"
+                    sh "npm run built"
+                    sh "npm run lint"
+                    sh "npm run tests"
+                }
+
+}
             }
         }
         stage('Test') {
